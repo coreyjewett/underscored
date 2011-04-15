@@ -1,0 +1,19 @@
+{
+  "name": "underscore",
+  "version": "0.1.0cj",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/coreyjewett/underscore.git"
+  },
+  "author": ["Jeremy Ashkenas <jeremy@documentcloud.org>",
+             "edtsech <edtsech@gmail.com>",
+             "Corey Jewett <cj@syntheticplayground.com>"]
+  "directories": {
+    "lib": "./lib"
+  },
+  "main": "index",
+  "engines": {
+    "node": "*"
+  }
+}
+
