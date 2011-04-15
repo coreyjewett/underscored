@@ -1,6 +1,0 @@
-[submodule "lib/underscore.string"]
-	path = lib/underscore.string
-	url = git://github.com/edtsech/underscore.string.git
-[submodule "lib/underscore"]
-	path = lib/underscore
-	url = git://github.com/documentcloud/underscore.git
