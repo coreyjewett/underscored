@@ -7,7 +7,7 @@
   },
   "author": ["Jeremy Ashkenas <jeremy@documentcloud.org>",
              "edtsech <edtsech@gmail.com>",
-             "Corey Jewett <cj@syntheticplayground.com>"]
+             "Corey Jewett <cj@syntheticplayground.com>"],
   "directories": {
     "lib": "./lib"
   },
