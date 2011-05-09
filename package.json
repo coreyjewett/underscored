@@ -11,7 +11,7 @@
   "directories": {
     "lib": "./lib"
   },
-  "main": "underscored",
+  "main": "./lib/underscored",
   "engines": {
     "node": "*"
   },
