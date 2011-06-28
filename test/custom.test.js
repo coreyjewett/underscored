@@ -46,5 +46,27 @@ vows.describe('Underscorec').addBatch({
       assert.equal(2, obj[0][0][0]);
       assert.equal(1, obj2[0][0][0]);
     }
+  },
+
+  'deepMerge': {
+    'Whatever': function() {
+      var target = {val: 1, array: ['a'], obj: {o: 1}}
+      var merged = _.deepMerge(_.deepCopy(target), {val2: 2, array: ['b'], obj2: {o: 2}});
+      assert.equal(1, merged.val);
+      assert.equal(2, merged.val2);
+      assert.deepEqual(['b'], merged.array);
+      assert.deepEqual({o: 1}, merged.obj);
+      assert.deepEqual({o: 2}, merged.obj2);
+
+      var merged = _.deepMerge(_.deepCopy(target), {val: 2, array: ['b'], obj: {o: 2, p: 3}});
+      assert.deepEqual(2, merged.val);
+      assert.deepEqual(['b'], merged.array);
+      assert.deepEqual({o: 2, p: 3}, merged.obj);
+
+      var merged = _.deepMerge(_.deepCopy(target), {val: 2, array: ['b'], obj: {o: 2, p: 3}}, true);
+      assert.deepEqual([1, 2], merged.val);
+      assert.deepEqual(['a','b'], merged.array);
+      assert.deepEqual({o: 2, p: 3}, merged.obj);
+    }
   }
 }).run();
