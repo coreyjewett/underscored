@@ -1,6 +1,6 @@
 {
   "name": "underscored",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "repository": {
     "type": "git",
     "url": "git://github.com/coreyjewett/underscore.git"
@@ -17,8 +17,8 @@
   },
   "dependencies": {
     "vows": "0",
-    "underscore": "1.1.6",
-    "underscore.string": "1.1.4"
+    "underscore": "1.1.7",
+    "underscore.string": "1.1.5"
   }
 }
 
