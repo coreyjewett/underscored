@@ -5,6 +5,25 @@ var assert = require('assert');
 vows.describe('Underscorec').addBatch({
   'makeNumeric': function(){
     assert.equal(_.makeNumeric(" 1.2asdf"), 1.2);
+    assert.equal(_.makeNumeric(" EUR 0,97 ", true), 0.97);
+    assert.equal(_.makeNumeric(" EUR 80,99 ", true), 80.99);
+    assert.equal(_.makeNumeric(" EUR 2.780,99 ", true), 2780.99);
+    assert.equal(_.makeNumeric(" EUR 2.780,99 ", false), 2.78099);   // this is obviously "wrong".
+    assert.equal(_.makeNumeric(" EUR 2.780,99 "), 2780.99);   // auto-detect EU
+    assert.equal(_.makeNumeric(" Zwischensumme:	 € 2.780,56"), 2780.56);
+    assert.equal(_.makeNumeric(" Zwischensumme:	 € 2.780,56", true), 2780.56);
+  },
+
+  'hash': function(){
+    assert.deepEqual(
+      _.hash("a", 1, "b", 2), 
+      { a: 1, b: 2 }
+    );
+  },
+
+  'transliterate': function(){
+    assert.equal(_.tr("qwerty", "wet", "uik"), "quirky");
+    assert.equal(_.tr("1.234,56", ",.", ".,"), "1,234.56");
   },
 
   'distill': function(){
