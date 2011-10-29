@@ -16,9 +16,11 @@
     "node": "*"
   },
   "dependencies": {
-    "vows": "0",
     "underscore": "1.2.1",
     "underscore.string": "1.1.6"
+  },
+  "devDependencies": {
+    "vows": "0"
   }
 }
 
