@@ -2,7 +2,7 @@ var _ = require('../lib/underscored');
 var vows = require('vows');
 var assert = require('assert');
 
-vows.describe('Underscorec').addBatch({
+vows.describe('Underscored').addBatch({
   'makeNumeric': function(){
     assert.equal(_.makeNumeric(" 1.2asdf"), 1.2);
     assert.equal(_.makeNumeric(" EUR 0,97 ", true), 0.97);
@@ -86,6 +86,26 @@ vows.describe('Underscorec').addBatch({
       assert.deepEqual([1, 2], merged.val);
       assert.deepEqual(['a','b'], merged.array);
       assert.deepEqual({o: 2, p: 3}, merged.obj);
+    }
+  },
+
+  'objectGen': {
+    'works': function() {
+      var User = {
+        name: null,
+        id: null,
+        sayHello: function() {
+          console.log('Hello '+ this.name);
+        }
+      }
+
+      var bob = _.objectGen(User, 'Bob', 1);
+      assert.equal("Bob", bob.name);
+      assert.equal(1, bob.id);
+
+      var ben = _.objectGen(User, 'Ben', 4);
+      assert.equal("Ben", ben.name);
+      assert.equal(4, ben.id);
     }
   }
 }).run();
