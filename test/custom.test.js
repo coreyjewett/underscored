@@ -107,5 +107,44 @@ vows.describe('Underscored').addBatch({
       assert.equal("Ben", ben.name);
       assert.equal(4, ben.id);
     }
+  },
+
+  'flattenKeys': {
+    'does not mangle vanilla hash': function() {
+      var obj = {
+        'hi': 'there',
+        'fuzzy': 'dice'
+      }
+
+      assert.deepEqual(_.flattenKeys(obj), obj);
+    },
+
+    'works': function() {
+      var obj = {
+        'hi': 'there',
+        'fuzzy': 'dice',
+        'hello': {
+          a: 1,
+          b: 2,
+          c: {
+            one: "hen",
+            two: "ducks",
+            three: "squawking geese"
+          }
+        }
+      }
+
+      var expect = {
+        'hi': 'there',
+        'fuzzy': 'dice',
+        'hello.a': 1,
+        'hello.b': 2,
+        'hello.c.one': "hen",
+        'hello.c.two': "ducks",
+        'hello.c.three': "squawking geese"
+      }
+
+      assert.deepEqual(_.flattenKeys(obj), expect);
+    }
   }
 }).run();
