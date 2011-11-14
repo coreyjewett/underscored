@@ -1,3 +1,3 @@
 # Underscored #
 
-Bringing together underscore, underscore.string, and an expanding library of handy functions.
+Bringing underscore, underscore.string, and some other functions together under one roof

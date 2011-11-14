@@ -1,9 +1,10 @@
 {
   "name": "underscored",
-  "version": "0.1.5",
+  "version": "0.1.5-1",
+  "description": "Bringing underscore, underscore.string, and some other functions together under one roof",
   "repository": {
     "type": "git",
-    "url": "git://github.com/coreyjewett/underscore.git"
+    "url": "git://github.com/coreyjewett/underscored.git"
   },
   "author": ["Jeremy Ashkenas <jeremy@documentcloud.org>",
              "edtsech <edtsech@gmail.com>",
