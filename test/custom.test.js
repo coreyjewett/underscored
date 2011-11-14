@@ -130,7 +130,8 @@ vows.describe('Underscored').addBatch({
             one: "hen",
             two: "ducks",
             three: "squawking geese"
-          }
+          },
+          d: ['x','y','z']
         }
       }
 
@@ -141,7 +142,8 @@ vows.describe('Underscored').addBatch({
         'hello.b': 2,
         'hello.c.one': "hen",
         'hello.c.two': "ducks",
-        'hello.c.three': "squawking geese"
+        'hello.c.three': "squawking geese",
+        'hello.d': ['x','y','z']
       }
 
       assert.deepEqual(_.flattenKeys(obj), expect);
